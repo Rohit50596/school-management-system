@@ -1,0 +1,82 @@
+{% extends 'index.html' %}
+{% block content %}
+
+{% if messages %}
+	{% for message in messages %}
+		<div class="alert-box" id="alert-box">
+			<p>SR School Management:&ensp;Says</p>
+			<div>{{message}}</div>
+			<button onclick="showform()">OK</button>
+		</div>
+	{% endfor %}
+{% endif %}
+
+<div class="image2">
+    <form action="/updatepinfo/" method="post">
+        {% csrf_token %}
+        <div class="formfield">
+            <label>StudentID:</label>
+            <input type="text" id="StudentID" name="search" required>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Cancel</button>
+    </form>
+</div>
+<br><br>
+<div class="image1">
+    <form action="/up/" method="post">
+        {% csrf_token %}
+        <h1>Personal Information</h1>
+        <div class="formfield">
+            <label>StudentName:</label>
+            <input type="text" id="name" name="studentname"value="{{pform.Student_name}}" required>
+        </div>
+        <div class="formfield">
+            <label>DOB:</label>
+            <input type="date" id="date" name="dob"value="{{pform.DOB}}" required>
+        </div>
+        <div class="formfield">
+            <label>Gender:</label>
+            <select name="gender" id="gender" required>
+                <option value="{{pform.Gender}}"></option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Otherrs">Others</option>
+            </select>
+        </div>
+        <div class="formfield">
+            <label>Phone:</label>
+            <input type="text" id="phone" name="phone"value="{{pform.Phone}}" required>
+        </div>
+        <div class="formfield">
+            <label>Street:</label>
+            <input type="text" id="street" name="street"value="{{pform.Street}}" required>
+        </div>
+        <div class="formfield">
+            <label>City:</label>
+            <input type="text" id="City" name="city" value="{{pform.city}}"required>
+        </div>
+        <div class="formfield">
+            <label>State:</label>
+            <input type="text" id="State" name="state"value="{{pform.State}}" required>
+        </div>
+        <div class="formfield">
+            <label>Pincode:</label>
+            <input type="text" id="Pincode" name="pincode" value="{{pform.Pincode}}"required>
+        </div>
+        <div class="formfield">
+            <label>AadharNumber:</label>
+            <input type="text" id="AadharNumber" name="aadharnumber"value="{{pform.AadharNumber}}" required>
+        </div>
+        <div class="formfield">
+            <label>PostalAddress:</label>
+            <input type="text" id="PostalAddress" name="postaladdress"value="{{pform.PostalAddress}}" required>
+        </div>
+        <div class="formlfield">
+            <labe>Nationality:</label>
+            <input type="text" id="Nationality" name="nationality"value="{{pform.Nationality}}" required>
+        </div>
+        <button type="submit">Update</button>
+    </form>
+</div>
+{% endblock %}

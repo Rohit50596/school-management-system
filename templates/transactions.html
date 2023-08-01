@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+{% block content %}
+
+{% if messages %}
+	{% for message in messages %}
+		<div class="alert-box" id="alert-box">
+			<p>SR School Management:&ensp;Says</p>
+			<div>{{message}}</div>
+			<button onclick="showform()">OK</button>
+		</div>
+	{% endfor %}
+{% endif %}
+
+<div class="image2">
+    <form action="/transactions/" method="post">
+        {% csrf_token %}
+        <div class="formfield">
+            <label>StudentID:</label>
+            <input type="text" id="StudentID" name="search" required>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Cancel</button>
+    </form>
+</div>
+<br><br>
+<div class="image1">
+<div class="customers-table">
+    <h1> Transactions</h1>
+    <table border="5px">
+        <thead>
+            <tr>
+                <th>Student Id</th>
+                <th>Student Name</th>
+                <th>Amount</th>
+                <th>Transaction Type</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in form %}
+            <tr>
+                <td>{{row.Student_id}}</td>
+                <td>{{row.Student_name}}</td>
+                <td>{{row.Amount}}</td>
+                <td>{{row.TransactionType}}</td>
+                <td>{{row.Date}}</td>
+                <td>{{row.Time}}</td>
+                <td>{{row.Status}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+{% endblock %}

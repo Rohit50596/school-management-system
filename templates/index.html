@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>SR School Management</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script type="text/javascript" src="{%static 'js/Scripts.js' %}"></script>
+
+</head>
+<body style="background-color: white;">
+    <div class="navbar">
+        <a href="/home/">home</a>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Add Student<i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="/personalinfo/">Personal Info</a>
+                <a href="/schoolinfo/">School Info</a>
+            </div>
+        </div>
+
+        <a href="/balancecheck/">Check Balance</a>
+
+        <a href="/deletestudent/">Delete Student</a>
+        <div class="dropdown">
+            <button class="dropbtn">Update Student<i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="/updatepinfo/">Personal Info</a>
+                <a href="/updatesinfo/">School Info</a>
+            </div>
+        </div>
+        
+        <a href="/clearfee/">Pay Fee</a>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Search Student<i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="/student/">By Student</a>
+                <a href="/allstudents/">All Students</a>
+            </div>
+        </div>
+
+        
+        <a href="/addemployee/">Add Employee</a>
+
+        <div class="dropdown">
+            <button class="dropbtn">Transactions<i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="/transactions/">By Student</a>
+                <a href="/alltransactions/">All Transactions</a>
+            </div>
+        </div>
+
+        <li style="float:right"><a href="/logout/">LogOut</a></li>
+    </div>
+
+    <section class="container">
+    {% block content %}
+    
+    {% endblock %}	
+    </section>
+    
+</body>
+</html>

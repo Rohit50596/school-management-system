@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+{% block content %}
+
+{% if messages %}
+	{% for message in messages %}
+		<div class="alert-box" id="alert-box">
+			<p>SR School Management:&ensp;Says</p>
+			<div>{{message}}</div>
+			<button onclick="showform()">OK</button>
+		</div>
+	{% endfor %}
+{% endif %}
+
+<div class="image3">
+    <form action="/clearfee/" method="post">
+        {% csrf_token %}
+        <h1>Pay Fee</h1>
+        <div class="formfield">
+            <label>StudentID:</label>
+            <input type="text" id="StudentID" name="studentid" required>
+        </div>
+        <div class="formfield">
+            <label>StudentName:</label>
+            <input type="text" id="StudentName" name="studentname" required>
+        </div>
+        <div class="formfield">
+            <label>Amount:</label>
+            <input type="text" id="amount" name="amount" required>
+        </div>
+        <div class="formfield">
+            <label>Transaction type:</label>
+            <input type="text" id="ttype" name="ttype" required>
+        </div>
+        <div class="formfield">
+            <label>Date:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div class="formfield">
+            <label>Time:</label>
+            <input type="time" id="time" name="time" required>
+        </div>
+        <div class="formfield">
+            <label>Status:</label>
+            <input type="text" id="status" name="status" required>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Cancel</button>
+    </form>
+</div>
+<br><br>
+<div class="customers-table">
+    <table border="5px">
+        <thead>
+            <tr>Balance</tr>
+        </thead>
+        <tbody>
+            <td>{{form.Balance}}</td>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

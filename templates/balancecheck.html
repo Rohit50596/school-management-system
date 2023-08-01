@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% block content %}
+
+{% if messages %}
+	{% for message in messages %}
+		<div class="alert-box" id="alert-box">
+			<p>SR School Management:&ensp;Says</p>
+			<div>{{message}}</div>
+			<button onclick="showform()">OK</button>
+		</div>
+	{% endfor %}
+{% endif %}
+
+<div class="image1">
+    <form action="/transactions/" method="post">
+        {% csrf_token %}
+        <div class="formfield">
+            <label>StudentID:</label>
+            <input type="text" id="StudentID" name="search" required>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Cancel</button>
+    </form>
+</div>
+<br><br>
+<div class="image1">
+<div class="customers-table">
+    <table border="5px">
+        <thead>
+            <tr>
+                <th>Student Id</th>
+                <th>Student Name</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>{{form.Student_id}}</th>
+                <th>{{form.Student_name}}</th>
+                <th>{{form.Balance}}</th>
+            </tr>
+        </tbody>
+   </table>
+</div>
+</div>
+{% endblock %}

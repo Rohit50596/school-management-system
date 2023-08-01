@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+{% block content %}
+
+{% if messages %}
+	{% for message in messages %}
+		<div class="alert-box" id="alert-box">
+			<p>SR School Management:&ensp;Says</p>
+			<div>{{message}}</div>
+			<button onclick="showform()">OK</button>
+		</div>
+	{% endfor %}
+{% endif %}
+
+<div class="image1">
+   <form action="/schoolinfo/" method="post">
+    {% csrf_token %}
+    <h1>School Information</h1>
+    <div class="formfield">
+        <label>StudentID:</label>
+        <input type="text" id="StudentID" name="studentid" required>
+    </div>
+    <div class="formfield">
+        <label>StudentName:</label>
+        <input type="text" id="StudentName" name="studentname" required>
+    </div>
+    <div class="formfield">
+        <label>TotalFee:</label>
+        <input type="text" id="TotalFee" name="totalfee" required>
+    </div>
+    <div class="formfield">
+        <label>InitialPaid:</label>
+        <input type="text" id="InitialPaid" name="initialpaid" required>
+    </div>
+    <div class="formfield">
+        <label>Balance:</label>
+        <input type="text" id="Balance" name="balance" required>
+    </div>
+    <div class="formfield">
+        <label>Class:</label>
+        <input type="text" id="Class" name="cl" required>
+    </div>
+    <div class="formfield">
+        <label>DateOfJoined:</label>
+        <input type="date" id="DateOfJoined" name="datejoined" required>
+    </div>
+    <div class="formfield">
+        <label>ProfilePicture:</label>
+        <input type="file" id="ProfilePicture" name="ppicture" required>
+    </div>
+    <div class="formfield">
+        <label>SignaturePicture:</label>
+        <input type="file" id="SignaturePicture" name="spicture" required>
+    </div>
+    <button type="submit">Submit</button>
+    <button type="reset">Cancel</button>
+   </form>
+</div>
+{% endblock %}

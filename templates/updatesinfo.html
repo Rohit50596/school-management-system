@@ -1,0 +1,71 @@
+{% extends 'index.html' %}
+{% block content %}
+
+{% if messages %}
+	{% for message in messages %}
+		<div class="alert-box" id="alert-box">
+			<p>SR School Management:&ensp;Says</p>
+			<div>{{message}}</div>
+			<button onclick="showform()">OK</button>
+		</div>
+	{% endfor %}
+{% endif %}
+
+<div class="image2">
+    <form action="/updatesinfo/" method="post">
+        {% csrf_token %}
+        <div class="formfield">
+            <label>StudentID:</label>
+            <input type="text" id="StudentID" name="search" required>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Cancel</button>
+    </form>
+</div>
+<br><br>
+<div class="image1">
+    <form action="/us/" method="post">
+     <h1>School Information</h1>
+     <div class="formfield">
+         <label>StudentID:</label>
+         <input type="text" id="StudentID" name="studentid" value="{{form.Student_id}}"required>
+     </div>
+     <div class="formfield">
+         <label for="">StudentName:</label>
+         <input type="text" id="StudentName" name="studentname" value="{{form.Student_name}}" required>
+     </div>
+     <div class="formfield">
+         <label>TotalFee:</label>
+         <input type="text" id="TotalFee" name="totalfee" value="{{form.TotalFee}}" required>
+     </div>
+     <div class="formfield">
+         <label>InitialPaid:</label>
+         <input type="text" id="InitialPaid" name="initialpaid" value="{{form.InitialPaid}}" required>
+     </div>
+     <div class="formfield">
+         <label>Balance:</label>
+         <input type="text" id="Balance" name="balance" value="{{form.Balance}}" required>
+     </div>
+     <div class="formfield">
+         <label>Class:</label>
+         <input type="text" id="Class" name="cl" value="{{form.Class}}" required>
+     </div>
+     <div class="formfield">
+         <label>DateOfJoined:</label>
+         <input type="date" id="DateOfJoined" name="datejoined" value="{{form.DateOfJoined}}" required>
+     </div>
+     <div class="formfield">
+         <label>ProfilePicture:</label>
+         <p><img src="/static/uploaded/{{form.ProfilePicture}}"></p>
+         <input type="file" id="ProfilePicture" name="ppicture" value="{{form.ProfilePicture}}" required>
+     </div>
+     <div class="formfield">
+         <label>SignaturePicture:</label>
+         <p><img src="/static/uploaded/{{form.SignaturePicture}}"></p>
+         <input type="file" id="SignaturePicture" name="spicture" value="{{form.SignaturePicture}}" required>
+     </div>
+     <button type="submit">Update</button>
+    </form>
+ </div>
+
+{% endblock %}

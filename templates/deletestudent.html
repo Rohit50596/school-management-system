@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% block content %}
+
+{% if messages %}
+	{% for message in messages %}
+		<div class="alert-box" id="alert-box">
+			<p>SR School Management:&ensp;Says</p>
+			<div>{{message}}</div>
+			<button onclick="showform()">OK</button>
+		</div>
+	{% endfor %}
+{% endif %}
+
+<div class="image2">
+   <form action="/deletestudent/" method="post">
+    {% csrf_token %}
+    <h1>Delete Student</h1>
+    <div class="formfield">
+        <label>Student ID:</label>
+        <input type="text" id="UserID" name="searchid" required>
+    </div>
+    <div class="formfield">
+        <label>Student Name:</label>
+        <input type="text" id="Name" name="searchname" required>
+    </div>
+    <button type="submit">Submit</button>
+    <button type="reset">Cancel</button>
+   </form>
+</div>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'index.html' %}
+{% block content %}
+
+{% if messages %}
+	{% for message in messages %}
+		<div class="alert-box" id="alert-box">
+			<p>SR School Management:&ensp;Says</p>
+			<div>{{message}}</div>
+			<button onclick="showform()">OK</button>
+		</div>
+	{% endfor %}
+{% endif %}
+
+<div class="image3">
+    <form action="/student/" method="post">
+        {% csrf_token %}
+        <div class="formfield">
+            <label>StudentID:</label>
+            <input type="text" id="StudentID" name="searchid" required>
+        </div>
+        <div class="formfield">
+            <label for="">StudentName:</label>
+            <input type="text" id="StudentName" name="searchname" required>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Cancel</button>
+    </form>
+</div>
+<br><br>
+<div class="image1">
+<div class="customers-table">
+    <h1> Student School Information</h1>
+    <table border="5px">
+        <thead>
+            <tr> 
+                <th>Student Id</th>
+                <th>Student Name</th>
+                <th>Total Fee</th>
+                <th>Initial Paid</th>
+                <th>Balance</th>
+                <th>Class</th>
+                <th>Date Joined</th>
+                <th>Profile Picture</th>
+                <th>Signature Picture</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in form %}
+            <tr>
+                <td>{{row.Student_id}}</td>
+                <td>{{row.Student_name}}</td>
+                <td>{{row.TotalFee}}</td>
+                <td>{{row.InitialPaid}}</td>
+                <td>{{row.Balance}}</td>
+                <td>{{row.Class}}</td>
+                <td>{{row.DateJoined}}</td>
+                <td>{{row.ProfilePicture}}</td>
+                <td>{{row.SignaturePicture}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+<br><br>
+<div class="image1">
+<div class="customers-table">
+    <h1> Student Personal Information</h1>
+    <table border="5px">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Date Of Birth</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Pincode</th>
+                <th>Aadhar Number</th>
+                <th>Postal Address</th>
+                <th>Nationality</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in pform %}
+            <tr>
+                <td>{{row.Student_name}}</td>
+                <td>{{row.DOB}}</td>
+                <td>{{row.Gender}}</td>
+                <td>{{row.Phone}}</td>
+                <td>{{row.Street}}</td>
+                <td>{{row.City}}</td>
+                <td>{{row.State}}</td>
+                <td>{{row.Pincode}}</td>
+                <td>{{row.AadharNumber}}</td>
+                <td>{{row.PostalAddress}}</td>
+                <td>{{row.Nationality}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+{% endblock %}

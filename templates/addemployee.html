@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+{% block content %}
+
+{% if messages %}
+	{% for message in messages %}
+		<div class="alert-box" id="alert-box">
+			<p>SR School Management:&ensp;Says</p>
+			<div>{{message}}</div>
+			<button onclick="showform()">OK</button>
+		</div>
+	{% endfor %}
+{% endif %}
+
+<div class="image1">
+   <form action="/addemployee/" method="post">
+    {% csrf_token %}
+    <h1>EmployeePage</h1>
+    <div class="formfield">
+        <label>UserID:</label>
+        <input type="text" id="UserID" name="uid" required>
+    </div>
+    <div class="formfield">
+        <label>Name:</label>
+        <input type="text" id="Name" name="name" required>
+    </div>
+    <div class="formfield">
+        <label>Phone:</label>
+        <input type="text" id="Phone" name="phone" required>
+    </div>
+    <div class="formfield">
+        <label>Password:</label>
+        <input type="password" id="Password" name="password" required>
+    </div>
+    <div class="formfield">
+        <label>JobDescription:</label>
+        <input type="text" id="JobDescription" name="jobdescription" required>
+    </div>
+    <div class="formfield">
+        <label>Status:</label>
+        <input type="text" id="Status" name="status" required>
+    </div>
+  
+    <button type="submit">Submit</button>
+    <button type="reset">Cancel</button>
+   </form>
+</div>
+{% endblock %}

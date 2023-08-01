@@ -1,0 +1,232 @@
+
+/*allforms*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+  }
+  .image1{
+    background-image: url("backendimage1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+  }
+  .image2{
+    background-image: url("backend2.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+  }
+  .image3{
+    background-image: url("backend3.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+  }
+  .image4{
+    background-image: url("backend4.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 100px 20px 200px ;
+  } 
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-direction: column;
+    height: 650px; 
+    overflow-y: scroll;
+    background-color: white;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .formfield {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="password"],
+  input[type="datetime-local"],
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  select {
+    height: 36px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 130px;
+  }
+  button:hover{
+    cursor: pointer;
+  }
+  
+  button[type="reset"] {
+    margin-left: 10px;
+    background-color: #dd0c0c;
+  }
+/*login page*/
+.login form{
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-direction: column;
+    height: 300px; 
+    overflow-y: scroll;
+    background-color: white;
+}
+.login form button a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+/*tables*/
+.customers-table table th,.cutomers-table table td{
+	padding:0px 2px;
+}
+.customers-table,.transactions-list{
+	width:100%;
+	overflow:scroll;
+	background-color: white;
+}
+.customers-table table,.transactions-list table{
+	width: 100%;
+}
+.customers-table::-webkit-scrollbar{
+	width:5px;
+}
+
+
+/*index body*/
+
+.container{
+	width:75.5%;
+	margin-left:230px;
+	background-color:#fff8f2;
+	max-height:fit-content;
+	min-height:109vh;
+	padding:70px 50px;
+}
+
+/*nav bar*/
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.navbar{
+  overflow: hidden;
+  background-color: #333;
+}
+.navbar a{
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.dropdown{
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropbtn{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.navbar a:hover, .dropdown:hover .dropbtn{
+  background-color: red;
+}
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a{
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover{
+  background-color: #ddd;
+}
+.dropdown:hover ,.dropdown-content{
+  display:block
+}
+
+
+/* alert box */
+
+.alert-box{
+	width:400px;
+	height:120px;
+	box-shadow:inset 0px 0px 1px 1px rgba(0, 0,0, .2);
+	background-color: white;
+	z-index: 1000;
+	font-size: 16px;
+	position: fixed;
+	padding:10px;
+	border-radius: 5px;
+	color: rgba(0, 0, 0,.6);
+	margin-top: -70px;
+	margin-left:100px;
+}
+.alert-box p{
+	margin-bottom: 10px;
+	font-size: 17px;
+}
+.alert-box button{
+	float: right;
+	margin-top:45px;
+	background-color:green;
+	border: 2px double rgba(0, 0, 0, .5);
+	color: white;
+	cursor: pointer;
+	width: 50px;
+	padding:7px 10px;
+	outline: none;
+	border-radius:15px;
+	border: none;
+	box-shadow: 0px 0px 1px 1px rgba(0, 0, 0,.1);
+}
