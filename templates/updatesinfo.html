@@ -24,8 +24,9 @@
 </div>
 <br><br>
 <div class="image1">
-    <form action="/us/" method="post">
+    <form action="/us/" method="post" enctype="multipart/form-data">
      <h1>School Information</h1>
+     {% csrf_token %}
      <div class="formfield">
          <label>StudentID:</label>
          <input type="text" id="StudentID" name="studentid" value="{{form.Student_id}}"required>
@@ -51,8 +52,8 @@
          <input type="text" id="Class" name="cl" value="{{form.Class}}" required>
      </div>
      <div class="formfield">
-         <label>DateOfJoined:</label>
-         <input type="date" id="DateOfJoined" name="datejoined" value="{{form.DateOfJoined}}" required>
+         <label>DateOfUpdation:</label>
+         <input type="date" id="DateOfJoined" name="dateupdated" value="{{form.DateOfJoined}}" required>
      </div>
      <div class="formfield">
          <label>ProfilePicture:</label>

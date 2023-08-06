@@ -49,8 +49,8 @@ class Transaction(models.Model):
     Student_name=models.ForeignKey(Student_pinfo,on_delete=models.CASCADE)
     Amount=models.CharField(max_length=250)
     TransactionType=models.CharField(max_length=250)
-    Date=models.DateField(auto_now_add=True,max_length=250)
-    Time=models.TimeField(auto_now_add=True,max_length=250)
+    Date=models.DateField(auto_now_add=True)
+    Time=models.TimeField(auto_now_add=True)
     Status=models.CharField(default="Incomplete",max_length=250)
     class Meta:
         db_table="Transaction"
