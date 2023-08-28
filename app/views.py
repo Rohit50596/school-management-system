@@ -75,11 +75,11 @@ def schoolinfo(request):
                     form=Student_sinfo(Student_id=studentid,Student_name=pform,TotalFee=totalfee,InitialPaid=initialpaid,Balance=balance,Class=cl,DateJoined=datejoined,ProfilePicture=profilepicture,SignaturePicture=signaturepicture)
                     try:
                         form.save()
-
+                        '''
                         handle_uploaded_file(ppicture)
 
                         handle_uploaded_file(spicture)
-
+                        '''
                         messages.success(request,"Form Submitted")
                         return redirect("/schoolinfo/")
                     except:
@@ -364,9 +364,10 @@ def us(request):
             form.InitialPaid=request.POST['initialpaid']
             form.Balance=request.POST['balance']
             form.Class=request.POST['cl']
-            form.DateJoined=request.POST['dateupdated']
-            form.ProfilePicture=request.POST['ppicture']
-            form.SignaturePicture=request.POST['spicture']
+            form.ProfilePicture.delete()
+            form.SignaturePicture.delete()
+            form.ProfilePicture=request.FILES['ppicture']
+            form.SignaturePicture=request.FILES['spicture']
             try:
                 form.save()
                 messages.success(request,"Form Submitted")

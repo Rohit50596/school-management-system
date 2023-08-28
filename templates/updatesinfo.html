@@ -52,18 +52,14 @@
          <input type="text" id="Class" name="cl" value="{{form.Class}}" required>
      </div>
      <div class="formfield">
-         <label>DateOfUpdation:</label>
-         <input type="date" id="DateOfJoined" name="dateupdated" value="{{form.DateOfJoined}}" required>
-     </div>
-     <div class="formfield">
          <label>ProfilePicture:</label>
-         <p><img src="/static/uploaded/{{form.ProfilePicture}}"></p>
-         <input type="file" id="ProfilePicture" name="ppicture" value="{{form.ProfilePicture}}" required>
+         <p><img src={{form.ProfilePicture}} alt={{form.ProfilePicture}}></p>
+         <input type="file" id="ProfilePicture" name="ppicture" value={{form.ProfilePicture}} required>
      </div>
      <div class="formfield">
          <label>SignaturePicture:</label>
-         <p><img src="/static/uploaded/{{form.SignaturePicture}}"></p>
-         <input type="file" id="SignaturePicture" name="spicture" value="{{form.SignaturePicture}}" required>
+         <p><img src={{form.SignaturePicture}} alt={{form.SignaturePicture}}></p>
+         <input type="file" id="SignaturePicture" name="spicture" value={{form.SignaturePicture}} required>
      </div>
      <button type="submit">Update</button>
     </form>

@@ -54,8 +54,8 @@
                 <td>{{row.Balance}}</td>
                 <td>{{row.Class}}</td>
                 <td>{{row.DateJoined}}</td>
-                <td>{{row.ProfilePicture}}</td>
-                <td>{{row.SignaturePicture}}</td>
+                <td><img src={{row.ProfilePicture}} alt={{row.ProfilePicture}}></td>
+                <td><img src={{row.SignaturePicture}} alt={{row.SignaturePicture}}></td>
             </tr>
             {% endfor %}
         </tbody>

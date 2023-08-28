@@ -25,8 +25,8 @@ class Student_sinfo(models.Model):
     Balance=models.CharField(max_length=250)
     Class=models.CharField(max_length=250)
     DateJoined=models.DateField(max_length=10)
-    ProfilePicture=models.ImageField(max_length=250)
-    SignaturePicture=models.ImageField(max_length=250,null=True)
+    ProfilePicture=models.ImageField(max_length=250,upload_to='app/static/uploaded/')
+    SignaturePicture=models.ImageField(max_length=250,null=True,upload_to='app/static/uploaded/')
     class Meta:
         db_table="SchoolInformation"
     def __str__(self):
